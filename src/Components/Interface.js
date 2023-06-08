@@ -70,15 +70,17 @@ const Interface = () => {
         <div className="row my-5">
           {data.map((ele) => {
             return (
-              <div className="col-md-4 my-4" key={ele.show.url}>
-                <PageContent
-                  image={ele.show.image.medium}
-                  title={ele.show.name}
-                  premiered={ele.show.premiered}
-                  summary={ele.show.summary}
-                  url={ele.show.url}
-                />
-              </div>
+              ele.show.name !== "All Wrong" && (
+                <div className="col-md-4 my-4" key={ele.show.url}>
+                  <PageContent
+                    image={ele.show.image.medium}
+                    title={ele.show.name}
+                    premiered={ele.show.premiered}
+                    summary={ele.show.summary}
+                    url={ele.show.url}
+                  />
+                </div>
+              )
             );
           })}
         </div>

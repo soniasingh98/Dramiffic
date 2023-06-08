@@ -19,7 +19,14 @@ const PageContent = (props) => {
             style={toggle ? { height: "150px" } : { height: "0px" }}
             className="card-text"
           >
-            {toggle ? summary.slice(0, 247) : ""}
+            {toggle
+              ? summary
+                  .slice(0, 247)
+                  .replace("<p>", "")
+                  .replace("</p>", "")
+                  .replace("<b>", "")
+                  .replace("</b>", "")
+              : ""}
           </p>
           <div
             style={{
